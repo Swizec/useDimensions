@@ -17,6 +17,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "react": "^16.8.4"
   },
   "devDependencies": {
     "nwb": "0.21.x"
