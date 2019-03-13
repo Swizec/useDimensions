@@ -29,8 +29,6 @@ Here's an approach I found works great
 
 ## useDimensions hook
 
-This seemed like a neat approach so I turned it into [an open source React Hook](https://github.com/Swizec/useDimensions). You might enjoy it.
-
 ![useDimensions source](https://i.imgur.com/Tm1Bmdw.png)
 
 Yep that's it. It really is that simple.
