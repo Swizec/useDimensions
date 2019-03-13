@@ -1,29 +1,29 @@
 {
-  "name": "useDimensions",
-  "version": "1.0.0",
-  "description": "Describe useDimensions here",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
-  "scripts": {
-    "build": "nwb build-web-module",
-    "clean": "nwb clean-module",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
-  },
-  "dependencies": {
-    "react": "^16.8.4"
-  },
-  "devDependencies": {
-    "nwb": "0.21.x"
-  },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": ""
+    "name": "useDimensions",
+    "version": "1.0.0",
+    "description": "Describe useDimensions here",
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "files": [
+        "es",
+        "lib",
+        "umd"
+    ],
+    "scripts": {
+        "build": "nwb build-web-module",
+        "clean": "nwb clean-module",
+        "test": "nwb test",
+        "test:coverage": "nwb test --coverage",
+        "test:watch": "nwb test --server"
+    },
+    "dependencies": {
+        "react": "^16.8.4"
+    },
+    "devDependencies": {
+        "nwb": "0.21.x"
+    },
+    "author": "Swizec Teller",
+    "homepage": "https://swizec.com",
+    "license": "MIT",
+    "repository": "https://github.com/Swizec/useDimensions"
 }
