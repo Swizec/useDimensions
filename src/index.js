@@ -1,7 +1,6 @@
 import { useRef, useState, useLayoutEffect } from "react";
 
-function useDimensions() {
-    const ref = useRef();
+function useDimensions(ref = useRef()) {
     const [dimensions, setDimensions] = useState({});
     useLayoutEffect(() => {
         ref.current &&
