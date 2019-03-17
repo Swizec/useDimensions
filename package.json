@@ -28,5 +28,8 @@
     "author": "Swizec Teller",
     "homepage": "https://swizec.com",
     "license": "MIT",
-    "repository": "https://github.com/Swizec/useDimensions"
+    "repository": "https://github.com/Swizec/useDimensions",
+    "dependencies": {
+        "react-fast-compare": "^2.0.4"
+    }
 }
