@@ -12,15 +12,18 @@
     "scripts": {
         "build": "nwb build-web-module",
         "clean": "nwb clean-module",
+        "start": "nwb serve-react-demo",
         "test": "nwb test",
         "test:coverage": "nwb test --coverage",
         "test:watch": "nwb test --server"
     },
-    "dependencies": {
-        "react": "^16.8.4"
+    "peerDependencies": {
+        "react": "^16.8.x"
     },
     "devDependencies": {
-        "nwb": "0.21.x"
+        "nwb": "0.21.x",
+        "react": "^16.8.4",
+        "react-dom": "^16.8.4"
     },
     "author": "Swizec Teller",
     "homepage": "https://swizec.com",
