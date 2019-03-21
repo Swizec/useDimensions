@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useLayoutEffect } from "react";
 
 function getDimensionObject(node) {
     const rect = node.getBoundingClientRect();
@@ -21,14 +21,24 @@ function getDimensionObject(node) {
 
 function useDimensions() {
     const [dimensions, setDimensions] = useState({});
+    const [node, setNode] = useState(null);
 
     const ref = useCallback(node => {
-        if (node) {
-            setDimensions(getDimensionObject(node));
-        } else {
-            setDimensions({});
-        }
+        setNode(node);
     }, []);
+
+    useLayoutEffect(() => {
+        if (node) {
+            const measure = () => {
+                setDimensions(getDimensionObject(node));
+            };
+            measure();
+
+            window.addEventListener("resize", measure);
+
+            return () => window.removeEventListener("resize", measure);
+        }
+    }, [node]);
 
     return [ref, dimensions];
 }

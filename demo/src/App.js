@@ -45,7 +45,8 @@ class App extends Component {
                         useDimensions
                     </a>{" "}
                     is a React Hook for measuring DOM nodes. You can use it to
-                    measure any element in your DOM. Like this 👇
+                    measure any element in your DOM. Try resizing this window to
+                    watch useDimensions update measurements live. Like this 👇
                 </p>
                 <code>
                     <pre>{`
