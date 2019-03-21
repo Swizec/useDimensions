@@ -45,7 +45,7 @@ function useDimensions() {
         }
     }, [node]);
 
-    return [ref, dimensions];
+    return [ref, dimensions, node];
 }
 
 export default useDimensions;
