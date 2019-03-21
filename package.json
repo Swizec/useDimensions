@@ -10,7 +10,7 @@
         "umd"
     ],
     "scripts": {
-        "build": "nwb build-web-module",
+        "build": "nwb build-react-component",
         "clean": "nwb clean-module",
         "start": "nwb serve-react-demo",
         "test": "nwb test",
