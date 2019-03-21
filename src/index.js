@@ -35,8 +35,12 @@ function useDimensions() {
             measure();
 
             window.addEventListener("resize", measure);
+            window.addEventListener("scroll", measure);
 
-            return () => window.removeEventListener("resize", measure);
+            return () => {
+                window.removeEventListener("resize", measure);
+                window.removeEventListener("scroll", measure);
+            };
         }
     }, [node]);
 
