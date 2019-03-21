@@ -1,7 +1,7 @@
-import { useRef, useState, useLayoutEffect } from "react";
+import { useState, useCallback } from "react";
 
-function getDimensionObject(ref) {
-    const rect = ref.current.getBoundingClientRect();
+function getDimensionObject(node) {
+    const rect = node.getBoundingClientRect();
 
     if (rect.toJSON) {
         return rect.toJSON();
@@ -20,11 +20,15 @@ function getDimensionObject(ref) {
 }
 
 function useDimensions() {
-    const ref = useRef(); // replacing this with ref callback, also creates infinite loops
     const [dimensions, setDimensions] = useState({});
-    useLayoutEffect(() => {
-        ref.current && setDimensions(getDimensionObject(ref));
-    }, [ref.current]); // removing this creates infinite loops
+
+    const ref = useCallback(node => {
+        if (node) {
+            setDimensions(getDimensionObject(node));
+        } else {
+            setDimensions({});
+        }
+    }, []);
 
     return [ref, dimensions];
 }
