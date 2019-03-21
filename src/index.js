@@ -29,9 +29,10 @@ function useDimensions() {
 
     useLayoutEffect(() => {
         if (node) {
-            const measure = () => {
-                setDimensions(getDimensionObject(node));
-            };
+            const measure = () =>
+                window.requestAnimationFrame(() =>
+                    setDimensions(getDimensionObject(node))
+                );
             measure();
 
             window.addEventListener("resize", measure);
