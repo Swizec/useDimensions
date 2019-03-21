@@ -11,6 +11,12 @@
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
 
+## Demo
+
+[👉 check out demo page to see useDimensions in action](https://usedimensions.now.sh/)
+
+## Backstory :P
+
 The other day I wanted to measure some DOM nodes. This is useful when you have to align items, or respond to browser width, or ... lots of reasons okay.
 
 I had to align a curvy line with elements that aren't under my control. This little stepper component uses flexbox to evenly space circles, CSS layouting aligns the title, and you see where this is going.
