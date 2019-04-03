@@ -1,6 +1,6 @@
 {
     "name": "react-use-dimensions",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "useDimensions - a React Hook to measure DOM nodes",
     "main": "lib/index.js",
     "module": "es/index.js",
