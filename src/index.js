@@ -9,8 +9,8 @@ function getDimensionObject(node) {
         return {
             width: rect.width,
             height: rect.height,
-            top: rect.top || rect.x,
-            left: rect.left || rect.left,
+            top: rect.top || rect.y,
+            left: rect.left || rect.x,
             x: rect.x || rect.left,
             y: rect.y || rect.top,
             right: rect.right,
