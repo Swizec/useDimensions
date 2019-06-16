@@ -13,7 +13,7 @@
         "build": "npm run build:ts && nwb build-react-component",
         "build:ts": "tsc",
         "clean": "nwb clean-module",
-        "start": "nwb serve-react-demo",
+        "start": "npm run build:ts && nwb serve-react-demo",
         "test": "nwb test",
         "test:coverage": "nwb test --coverage",
         "test:watch": "nwb test --server"

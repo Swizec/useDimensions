@@ -1,5 +1,5 @@
 import { useState, useCallback, useLayoutEffect } from "react";
-import { DimensionObject, UseDimensionsHook } from "./types";
+import { DimensionObject, UseDimensionsArgs, UseDimensionsHook } from "./types";
 
 function getDimensionObject(node: HTMLElement): DimensionObject {
     const rect = node.getBoundingClientRect();
@@ -16,7 +16,9 @@ function getDimensionObject(node: HTMLElement): DimensionObject {
     };
 }
 
-function useDimensions(): UseDimensionsHook {
+function useDimensions({
+    liveMeasure = true
+}: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
     const [node, setNode] = useState(null);
 
@@ -32,13 +34,15 @@ function useDimensions(): UseDimensionsHook {
                 );
             measure();
 
-            window.addEventListener("resize", measure);
-            window.addEventListener("scroll", measure);
+            if (liveMeasure) {
+                window.addEventListener("resize", measure);
+                window.addEventListener("scroll", measure);
 
-            return () => {
-                window.removeEventListener("resize", measure);
-                window.removeEventListener("scroll", measure);
-            };
+                return () => {
+                    window.removeEventListener("resize", measure);
+                    window.removeEventListener("scroll", measure);
+                };
+            }
         }
     }, [node]);
 

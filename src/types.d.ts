@@ -14,3 +14,7 @@ export type UseDimensionsHook = [
     {} | DimensionObject,
     HTMLElement
 ];
+
+export interface UseDimensionsArgs {
+    liveMeasure?: boolean;
+}

@@ -91,4 +91,29 @@ const MyComponent = () => {
 };
 ```
 
+## Disabling live updates
+
+By default `useDimensions` live updates its measurements on every scroll and resize event. This can lead to a lot of re-rendering, if you aren't careful.
+
+I recommend feeding the dimensions you care about into your list of `useEffect` triggers. That is the best way to ensure good performance.
+
+If however, you don't want that and know you just need to measure once, `useDimensions` supports an optional `liveMeasure` argument.
+
+```javascript
+const MyComponent = () => {
+    const [stepRef, stepSize] = useDimensions({ liveMeasure: false });
+
+    // useDimensions never updates and won't trigger re-renders
+    console.log("Step is at X: ", stepSize.x);
+
+    return (
+        <div>
+            <div ref={stepRef}>This is a step</div>
+        </div>
+    );
+};
+```
+
+# License
+
 MIT License of course.
