@@ -10,7 +10,8 @@
         "umd"
     ],
     "scripts": {
-        "build": "nwb build-react-component",
+        "build": "npm run build:ts && nwb build-react-component",
+        "build:ts": "tsc",
         "clean": "nwb clean-module",
         "start": "nwb serve-react-demo",
         "test": "nwb test",
@@ -18,7 +19,9 @@
         "test:watch": "nwb test --server"
     },
     "peerDependencies": {
-        "react": "^16.8.x"
+        "@types/react": "^16.8.20",
+        "react": "^16.8.x",
+        "typescript": "^3.5.2"
     },
     "devDependencies": {
         "nwb": "0.21.x",
