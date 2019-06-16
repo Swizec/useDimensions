@@ -5,4 +5,4 @@
 /node_modules
 /umd
 npm-debug.log*
-src/index.js
+src/index.js*
