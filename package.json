@@ -29,7 +29,5 @@
     "homepage": "https://swizec.com",
     "license": "MIT",
     "repository": "https://github.com/Swizec/useDimensions",
-    "dependencies": {
-        "react-fast-compare": "^2.0.4"
-    }
+    "dependencies": {}
 }
