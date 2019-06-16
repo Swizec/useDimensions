@@ -7,10 +7,10 @@ function getDimensionObject(node: HTMLElement): DimensionObject {
     return {
         width: rect.width,
         height: rect.height,
-        top: rect.top,
-        left: rect.left,
-        x: rect.left,
-        y: rect.top,
+        top: "x" in rect ? rect.x : rect.top,
+        left: "y" in rect ? rect.y : rect.left,
+        x: "x" in rect ? rect.x : rect.left,
+        y: "y" in rect ? rect.y : rect.top,
         right: rect.right,
         bottom: rect.bottom
     };
