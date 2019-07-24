@@ -20,9 +20,11 @@ export interface UseDimensionsArgs {
     boundsType?: BoundsType;
 }
 
-export enum BoundsType {
+
+export const enum BoundsType {
     client = 'CLIENT',
     offset = 'OFFSET',
     scroll = 'SCROLL',
     bbox = 'BBOX'
 }
+

@@ -1,5 +1,5 @@
 import { useState, useCallback, useLayoutEffect } from "react";
-import { DimensionObject, UseDimensionsArgs, UseDimensionsHook, BoundsType } from "./types";
+import {DimensionObject, UseDimensionsArgs, UseDimensionsHook, BoundsType} from './types';
 
 function getDimensionObject(node: Element, boundsType: BoundsType): DimensionObject {
     let rect;
