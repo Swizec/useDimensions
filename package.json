@@ -26,7 +26,8 @@
     "devDependencies": {
         "nwb": "0.21.x",
         "react": "^16.8.4",
-        "react-dom": "^16.8.4"
+        "react-dom": "^16.8.4",
+        "typescript": "^3.5.3"
     },
     "author": "Swizec Teller",
     "homepage": "https://swizec.com",
