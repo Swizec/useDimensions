@@ -17,4 +17,12 @@ export type UseDimensionsHook = [
 
 export interface UseDimensionsArgs {
     liveMeasure?: boolean;
+    boundsType?: BoundsType;
+}
+
+export enum BoundsType {
+    client = 'CLIENT',
+    offset = 'OFFSET',
+    scroll = 'SCROLL',
+    bbox = 'BBOX'
 }
