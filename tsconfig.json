@@ -5,15 +5,15 @@
         "target": "es2015",
         "lib": ["es5", "es6", "es7", "es2017", "dom"],
         "sourceMap": true,
-        "allowJs": false, // todo: make this false when all .js files have been converted to .ts/.tsx
+        "allowJs": false,
         "jsx": "react",
         "moduleResolution": "node",
         "rootDirs": ["src"],
         "forceConsistentCasingInFileNames": true,
-        //    "noImplicitReturns": true,    // todo: enable this when all .js files have been converted to .ts/.tsx
-        //    "noImplicitThis": true,       // todo: enable this when all .js files have been converted to .ts/.tsx
-        //    "noImplicitAny": true,        // todo: enable this when all .js files have been converted to .ts/.tsx
-        //    "strictNullChecks": true,     // todo: enable this when all .js files have been converted to .ts/.tsx
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
         "removeComments": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,

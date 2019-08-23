@@ -25,6 +25,7 @@
         "typescript": "^3.5.2"
     },
     "devDependencies": {
+        "@types/react": "^16.8.20",
         "nwb": "0.21.x",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",

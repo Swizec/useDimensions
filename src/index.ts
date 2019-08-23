@@ -20,7 +20,7 @@ function useDimensions({
     liveMeasure = true
 }: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
-    const [node, setNode] = useState(null);
+    const [node, setNode] = useState<HTMLElement | null>(null);
 
     const ref = useCallback(node => {
         setNode(node);
@@ -44,6 +44,7 @@ function useDimensions({
                 };
             }
         }
+        return () => {}
     }, [node]);
 
     return [ref, dimensions as DimensionObject, node];
