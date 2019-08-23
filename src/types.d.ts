@@ -10,9 +10,9 @@ export interface DimensionObject {
 }
 
 export type UseDimensionsHook = [
-    (node: HTMLElement) => void,
-    {} | DimensionObject,
-    HTMLElement
+    (node: HTMLElement | null) => void,
+    DimensionObject,
+    HTMLElement | null
 ];
 
 export interface UseDimensionsArgs {

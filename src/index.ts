@@ -46,7 +46,7 @@ function useDimensions({
         }
     }, [node]);
 
-    return [ref, dimensions, node];
+    return [ref, dimensions as DimensionObject, node];
 }
 
 export default useDimensions;

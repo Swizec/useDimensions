@@ -17,7 +17,7 @@
         "removeComments": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
-        "declaration": false, // todo: make this true when all .js files have been converted to .ts/.tsx
+        "declaration": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "esModuleInterop": true

@@ -4,6 +4,7 @@
     "description": "useDimensions - a React Hook to measure DOM nodes",
     "main": "lib/index.js",
     "module": "es/index.js",
+    "typings": "src/index",
     "files": [
         "es",
         "lib",
