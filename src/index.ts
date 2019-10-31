@@ -27,14 +27,23 @@ function useDimensions({
     }, []);
 
     useLayoutEffect(() => {
-        if (node) {
-            const measure = () =>
-                window.requestAnimationFrame(() =>
-                    setDimensions(getDimensionObject(node))
-                );
-            measure();
+        if (!node) {
+            return
+        }
 
-            if (liveMeasure) {
+        const measure = () =>
+            window.requestAnimationFrame(() =>
+                setDimensions(getDimensionObject(node))
+            );
+        measure();
+
+        if (liveMeasure) {
+            if ('ResizeObserver' in window) {
+                const resizeObserver = new ResizeObserver(measure)
+                resizeObserver.observe(node)
+
+                return resizeObserver.disconnect
+            } else {
                 window.addEventListener("resize", measure);
                 window.addEventListener("scroll", measure);
 
