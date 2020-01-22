@@ -1,4 +1,4 @@
-import { useState, useCallback, useLayoutEffect } from "react";
+import { useState, useCallback, useLayoutEffect, useEffect } from "react";
 import { DimensionObject, UseDimensionsArgs, UseDimensionsHook } from "./types";
 
 function getDimensionObject(node: HTMLElement): DimensionObject {
@@ -17,16 +17,18 @@ function getDimensionObject(node: HTMLElement): DimensionObject {
 }
 
 function useDimensions({
-    liveMeasure = true
+    liveMeasure = true,
+    enableSSR = false,
 }: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
     const [node, setNode] = useState(null);
-
+    const useLayoutHookBasedOnEnvironment =  enableSSR ? useEffect : useLayoutEffect;
+    
     const ref = useCallback(node => {
         setNode(node);
     }, []);
 
-    useLayoutEffect(() => {
+    useLayoutHookBasedOnEnvironment(() => {
         if (node) {
             const measure = () =>
                 window.requestAnimationFrame(() =>
