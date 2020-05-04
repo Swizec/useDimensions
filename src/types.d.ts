@@ -17,5 +17,4 @@ export type UseDimensionsHook = [
 
 export interface UseDimensionsArgs {
     liveMeasure?: boolean;
-    enableSSR?: boolean;
 }

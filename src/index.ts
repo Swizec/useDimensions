@@ -18,11 +18,10 @@ function getDimensionObject(node: HTMLElement): DimensionObject {
 
 function useDimensions({
     liveMeasure = true,
-    enableSSR = false,
 }: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
     const [node, setNode] = useState(null);
-    const useLayoutHookBasedOnEnvironment =  enableSSR ? useEffect : useLayoutEffect;
+    const useLayoutHookBasedOnEnvironment =  typeof window === undefined ? useEffect : useLayoutEffect;
     
     const ref = useCallback(node => {
         setNode(node);
