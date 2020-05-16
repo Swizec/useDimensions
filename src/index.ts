@@ -21,7 +21,7 @@ function useDimensions({
 }: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
     const [node, setNode] = useState(null);
-    const useLayoutHookBasedOnEnvironment =  typeof window === undefined ? useEffect : useLayoutEffect;
+    const useLayoutHookBasedOnEnvironment =  typeof window === 'undefined' ? useEffect : useLayoutEffect;
     
     const ref = useCallback(node => {
         setNode(node);
