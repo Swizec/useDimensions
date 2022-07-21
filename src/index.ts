@@ -17,7 +17,8 @@ function getDimensionObject(node: HTMLElement): DimensionObject {
 }
 
 function useDimensions({
-    liveMeasure = true
+    liveMeasure = true,
+    trackScrolling = true
 }: UseDimensionsArgs = {}): UseDimensionsHook {
     const [dimensions, setDimensions] = useState({});
     const [node, setNode] = useState(null);
@@ -36,13 +37,19 @@ function useDimensions({
 
             if (liveMeasure) {
                 window.addEventListener("resize", measure);
-                window.addEventListener("scroll", measure);
-
-                return () => {
-                    window.removeEventListener("resize", measure);
-                    window.removeEventListener("scroll", measure);
-                };
             }
+            if (trackScrolling) {
+                window.addEventListener("scroll", measure);
+            }
+
+            return () => {
+                if (liveMeasure) {
+                    window.removeEventListener("resize", measure);
+                }
+                if (trackScrolling) {
+                    window.removeEventListener("scroll", measure);
+                }
+            };
         }
     }, [node]);
 
